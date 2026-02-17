@@ -1,0 +1,71 @@
+ION CRISTINA-GABRIELA 311CC
+TEMA 1 - SDA
+
+Punctaj tema: 98/100
+Valgrind: 17/20
+
+DETALII DESPRE IMPLEMENTAREA TEMEI
+
+Structurile utilizate:
+
+    1. structura pentru definirea unui vagon al trenului, 
+    care contine un caracter si pointeri catre nodurile vecine;
+
+    2. structura pentru definire trenului, care contine pointeri catre
+    primul vagon si catre mecanic;
+
+    3. structura pentru definirea unui nod din coada, 
+    avand pointeri catre nodurile vecine;
+
+    4. structura pentru definirea unei cozi, 
+    avand pointeri catre primul si ultimul element
+    din coada;
+
+Functiile utilizate:
+
+    1. insert_right: insereaza un vagon la dreapta mecanicului, deplasand mecanicul
+    pe noua pozitie inserata
+
+    2. insert_left: insereaza un vagon la stanga mecanicului, deplansand mecanicul
+    pe noua pozitie inserata
+
+    3. move_right: muta mecanicul catre dreapta
+
+    4. move_left: muta mecanicul catre stanga
+
+    5. write: modifica inscriptia de pe vagonul in care se afla mecanicul
+
+    6. del: sterge vagonul in care se afla mecanicul
+
+    7. del_all: trenul este adus la starea initiala
+
+    8. search: cauta un anumit sir, incepand cu pozitia mecanicului
+        -pe parcursul parcurgerii vagoanelor trenului, se compara
+        caracterul vagonului curent cu cel din sirul dat(la pozitia curenta), 
+        iar cand se gaseste o potrivire partiala, se va retine inceputul
+        acestei secvente in variabila aux.
+        -daca intreaga secventa este gasita, mecanicul este mutat la pozitia catre care pointeaza aux, 
+        in caz contrar, se afiseaza un mesaj de eroare(trenul ramane nemodificat).
+        
+    9. search_right: cauta un sir de caractere catre dreapta, pornind de la 
+    pozitia mecanicului
+
+    10. search_left: cauta un sir de caractere catre stanga, pornind de la 
+    pozitia mecanicului
+
+    11. enqueue: adauga o comanda in coada
+
+    12. reverse: inverseaza ordinea comenzilor din coada 
+
+    13. execute_queue: executa comenzile din coada 
+
+    14. commands: citeste comenzile din fisier, adauga in coada anumite comenzi, 
+    iar mai apoi se executa comenzile
+
+
+    In main: se deschid fisierele, urmand ca mai apoi sa apelam
+    functia commands pentru a citi comenzile din fisier,
+    a le adauga in coada si a le executa. După executarea tuturor comenzilor, 
+    se eliberează memoria alocată dinamic pentru lista de vagoane si pentru coada, 
+    iar dupa aceea se inchid fisierele.
+    
